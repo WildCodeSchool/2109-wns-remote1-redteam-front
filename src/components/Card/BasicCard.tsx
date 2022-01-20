@@ -6,19 +6,19 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 interface IBasicCard {
-  title: string,
+  name: string,
   description: string,
 }
 
 function BasicCard(props: IBasicCard): JSX.Element {
 
-  const { title, description} = props;
+  const { name, description} = props;
   
   return (
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Typography variant="h5" component="div">
-            {title}
+            {name}
           </Typography>
           <Typography variant="body2">
             {description}
