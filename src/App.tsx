@@ -1,38 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import { apiUrl } from './settings';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './theme/theme';
+import Navbar from './components/Navbar/Navbar';
+import Dashboard from './components/Dashboard/Dashboard';
+import Tasks from './components/Tasks/Tasks';
+import Users from './components/Users/Users';
+import Projects from './components/Projects/Projects';
+import Signup from './components/Admin/Signup';
 import './App.css';
 
+
 function App(): JSX.Element {
-  const [message, setMessage] = useState(null);
-  const [error, setError] = useState<Error | null>(null);
 
-  useEffect(() => {
-    const fetchMessage = async () => {
-      try {
-        const res = await fetch(`${apiUrl}/dummy-endpoint`);
-        if (!res.ok) {
-          throw new Error(res.statusText);
-        }
-        const data = await res.json();
-        setMessage(data.message);
-      } catch (err) {
-        if (err instanceof Error) {
-          setError(err);
-        } else {
-          setError(new Error('Unknown error'));
-        }
-      }
-    };
-
-    fetchMessage();
-  });
   return (
-    <div className="App">
-      <h1>React template</h1>
-      {message && <p>Message received from server: {message}</p>}
-      {error && <p>Error while fetching: {error?.message}</p>}
-    </div>
-  );
+    <ThemeProvider theme={theme}>
+    <Router>
+      <div style={{display : 'flex'}}>
+      < Navbar />
+      <Switch>
+        <Route path="/" exact>
+          <Dashboard/>
+        </Route>
+        <Route path="/tasks">
+          <Tasks/>
+        </Route>
+        <Route path="/projects">
+          <Projects/>
+        </Route>
+        <Route path="/users">
+          <Users/>
+        </Route>
+        <Route path="/signup">
+          <Signup/>
+        </Route>
+      </Switch>
+      </div>
+    </Router>
+    </ThemeProvider >
+  )
+
 }
 
 export default App;
