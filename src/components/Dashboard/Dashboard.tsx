@@ -4,6 +4,7 @@ import BasicCard from '../Card/BasicCard';
 import GET_PROJECTS from '../../graphql/query/project';
 
 interface IProject {
+  _id: string,
   name: string,
   description: string, 
   status: string
@@ -15,12 +16,13 @@ function Dashboard(): JSX.Element {
   if(error) return <p>Error</p>
 
 
+
   return (
     <div>
       <h2>Dashboard</h2>
       <h3>Liste des projets</h3>
       <div style={{display: "flex"}}>
-        { data && data.projects.map((project : IProject) => <BasicCard name={project.name} description={project.description} /> ) }
+        { data && data.projects.map((project : IProject) => <BasicCard btn id={project._id} name={project.name} description={project.description} /> ) }
       </div>
     </div>
   )
