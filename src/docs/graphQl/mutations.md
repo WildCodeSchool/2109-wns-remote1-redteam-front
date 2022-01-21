@@ -92,7 +92,7 @@ import { useMutation } from '@apollo/client';
 import DELETE_PROJECT from '../../graphql/mutation/project';
 
 ```
->On commence par importer le hook `useMutation` depuis apolloClient. Celui-ci nous permettra d'excuter les mutations définies plus tôt, importées depuis le dossier des mutations. Le hook nous met à disposition une fonction pour executer la mutation.
+>On commence par importer le hook `useMutation` depuis apolloClient. Celui-ci nous permettra d'excuter les mutations définies plus tôt, importées depuis le dossier des mutations. Le hook nous permet d'executer la mutation.
 _________________
 ```typescript
 ./src > components > Card > BasicCard.tsx |
