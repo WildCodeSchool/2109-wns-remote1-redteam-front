@@ -17,17 +17,8 @@
 </div>
 
 
-Source : https://github.com/alexandresanlim/Badges4-README.md-Profile
 
-## Techno
 
-- Reactjs
-- TypeScript
-- GraphQl avec Apollo Client
-- MaterialUi (librairie de composant) + MaterialUi theming pour le style personnalisé
-- Eslint (config AirBNB)
-- React Router
-- Axios
 
 
 ## Installation du projet 👇🏼
@@ -81,3 +72,6 @@ Ce dossier comporte le fichier de theming mis à disposition par MaterialUI. Il 
 #### App.tsx 
 Le composant « App » du fichier « App. tsx » est notre composant root de base. Il permet d'importer les autres composants pour afficher le rendu.
 
+
+
+![Source Badge](https://github.com/alexandresanlim/Badges4-README.md-Profile)
