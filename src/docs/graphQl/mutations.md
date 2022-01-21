@@ -103,7 +103,7 @@ const [deleteProject] = useMutation(DELETE_PROJECT, {
     onError : () => console.log("error")
 });
 ```
->Ici nous définition le nom de la fonction qui sera utiliser pour executer la mutation. Le hook `useMutation` prend en parametre deux arguments. Le premier est la mutation à executer. Le second est un object auquel nous pourront attribuer des fonction selon l'état de la mutation.
+>Ici nous définissons le nom de la fonction qui sera utiliser pour executer la mutation. Le hook `useMutation` prend en parametre deux arguments. Le premier est la mutation à executer. Le second est un object auquel nous pourront attribuer des fonction selon l'état de la mutation.
 
 
 _________________
