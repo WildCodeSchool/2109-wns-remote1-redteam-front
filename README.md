@@ -16,7 +16,7 @@
 <img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" />
 </div>
 
-
+_________________________________________
 ## Installation du projet 👇🏼
 
 ### Cloner le projet 
@@ -31,7 +31,7 @@ Lancer la commande :
 ``` 
 npm install 
 ```
-
+_________________________________________
 ## Lancement du projet 👇🏼
 
 ### Démarrer 💪🏼
@@ -42,15 +42,18 @@ npm start
 Le projet est disponible sur le port 
 > http://localhost:3000
 
-
+_________________________________________
 ## Structure du projet 🤯
 
-&nbsp; ### Dossier SRC
+### Dossier SRC
 <img src="./src/docs/images/arbo.png" alt="tree ./src -C --dirsfirst -L 3 " width="200"/>
 
+_________________________________________
 #### Dossier components 🗂
 
 Les composants vous permettent de découper l’interface utilisateur en éléments indépendants et réutilisables, vous permettant ainsi de considérer chaque élément de manière isolée. 
+
+_________________________________________
 #### Dossier graphql 🗂
 
 Le dossier graphQl est structuré en 2 parties. 
@@ -59,10 +62,12 @@ Le dossier query comporte la définition de toutes nos queries vers l'API pour r
 
 Le dossier mutations comporte la définition de toutes nos mutations  vers l'API pour envoyer de la données (équivalent du POST, PUT, DELETE en REST)
 
+_________________________________________
 #### Dossier theme 🗂
 
 Ce dossier comporte le fichier de theming mis à disposition par MaterialUI. Il permet de définir des propriétés globales de style réutilisable par tout nos          composants.
 
+_________________________________________
 #### Fichiers 
 
 ##### App.tsx 
