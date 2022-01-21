@@ -74,4 +74,4 @@ Le composant « App » du fichier « App. tsx » est notre composant root de bas
 
 
 
-![Source Badge](https://github.com/alexandresanlim/Badges4-README.md-Profile)
+[Source Badge](https://github.com/alexandresanlim/Badges4-README.md-Profile)
