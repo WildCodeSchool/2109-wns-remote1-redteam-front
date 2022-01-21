@@ -115,7 +115,7 @@ function handleDeleteProject(idProject) {
     deleteProject({variables : {deleteProjectId: idProject}})
   };
 ```
->Ensuite, nous pouvons utiliser la fonction `deleteProject` dans une fonction `handleDeleteProject` qui prend en paramètre l'ID du project (argument passer en props depuis le composant parent) qui sera appeler via un évenement sur un bouton. `deleteProject` prend en parametre un object qui a pour clé `variables` et pour valeur un object. Cet object à pour clé le nom de la variable défini dans la définition de mutation ([`./src/graphQl/mutations/project.ts`](./src/graphQl/mutations/project.ts)), et pour valeur l'id du projet à supprimer.
+>Ensuite, nous pouvons utiliser la fonction `deleteProject` dans une fonction `handleDeleteProject` qui prend en paramètre l'ID du project (argument passer en props depuis le composant parent) qui sera appeler via un évenement sur un bouton. `deleteProject` prend en parametre un object qui a pour clé `variables` et pour valeur un object. Cet object à pour clé le nom de la variable défini dans la définition de mutation ([`../../graphQl/mutations/project.ts`](./src/graphQl/mutations/project.ts)), et pour valeur l'id du projet à supprimer.
 
 ### Ressources 
 
