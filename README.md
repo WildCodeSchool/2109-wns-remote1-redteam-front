@@ -45,13 +45,13 @@ Le projet est disponible sur le port
 
 ## Structure du projet 🤯
 
-&nbsp;### Dossier SRC
+&nbsp; ### Dossier SRC
 <img src="./src/docs/images/arbo.png" alt="tree ./src -C --dirsfirst -L 3 " width="200"/>
 
-&nbsp;&nbsp;#### Dossier components 🗂
+&nbsp;&nbsp; #### Dossier components 🗂
 
 Les composants vous permettent de découper l’interface utilisateur en éléments indépendants et réutilisables, vous permettant ainsi de considérer chaque élément de manière isolée. 
-&nbsp;&nbsp;#### Dossier graphql 🗂
+&nbsp;&nbsp; #### Dossier graphql 🗂
 
 Le dossier graphQl est structuré en 2 parties. 
 
@@ -59,13 +59,13 @@ Le dossier query comporte la définition de toutes nos queries vers l'API pour r
 
 Le dossier mutations comporte la définition de toutes nos mutations  vers l'API pour envoyer de la données (équivalent du POST, PUT, DELETE en REST)
 
-&nbsp;&nbsp;#### Dossier theme 🗂
+&nbsp;&nbsp; #### Dossier theme 🗂
 
 Ce dossier comporte le fichier de theming mis à disposition par MaterialUI. Il permet de définir des propriétés globales de style réutilisable par tout nos          composants.
 
-&nbsp;&nbsp;#### Fichiers 
+&nbsp;&nbsp; #### Fichiers 
 
-&nbsp;&nbsp;&nbsp;##### App.tsx 
+&nbsp;&nbsp;&nbsp; ##### App.tsx 
 Le composant « App » du fichier « App. tsx » est notre composant root de base. Il permet d'importer les autres composants pour afficher le rendu.
 
 
