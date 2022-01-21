@@ -61,11 +61,11 @@ _________________
 ```typescript
 return (
     <ApolloProvider client={client}>
-      <App />
+      <components />
     </ApolloProvider>
   )
 ```
->Nous avons encapsulé le composant App dans ApolloProvider et avons passé le client comme accessoire au client. 
+>Nous avons encapsulé les composants de l'application dans ApolloProvider et avons passé le client comme props au client. 
 
 >ApolloProvider est similaire au Context.Provider de React. 
 
