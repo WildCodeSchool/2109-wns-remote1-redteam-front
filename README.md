@@ -1,46 +1,117 @@
-# Getting Started with Create React App
+# Bienvenue sur l'application `2109-wns-remote1-redteam-front` 👋🏼
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<div style={display:"flex"}>
+<img src="https://img.shields.io/badge/Apollo%20GraphQL-311C87?&style=for-the-badge&logo=Apollo%20GraphQL&logoColor=white" />
+<img src="https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white" />
+<img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" />
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+<img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" />
 
-In the project directory, you can run:
+<img src="	https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" />
+<img src="https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white" />
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" />
+<img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" />
+</div>
 
-### `yarn start`
+_________________________________________
+## Installation du projet 👇🏼
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Cloner le projet 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+>https://github.com/WildCodeSchool/2109-wns-remote1-redteam-front.git
 
-### `yarn test`
+### Installer les dépendances 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Toutes les dépendances du projet se trouve dans le fichier package.json 
 
-### `yarn build`
+Lancer la commande : 
+``` 
+npm install 
+```
+_________________________________________
+## Lancement du projet 👇🏼
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Démarrer 💪🏼
+```
+npm start 
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Le projet est disponible sur le port 
+> http://localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+_________________________________________
+## Structure du projet 🤯
 
-### `yarn eject`
+### Dossier SRC
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+````
+./src
+├── components
+│   ├── Admin
+│   │   └── Signup.tsx
+│   ├── Card
+│   │   └── BasicCard.tsx
+│   ├── Dashboard
+│   │   └── Dashboard.tsx
+│   ├── Navbar
+│   │   └── Navbar.tsx
+│   ├── Projects
+│   │   └── Projects.tsx
+│   ├── Tasks
+│   │   └── Tasks.tsx
+│   ├── Users
+│   │   └── Users.tsx
+│   ├── BtnComponent.tsx
+│   ├── IconText.tsx
+│   └── TextFields.tsx
+├── graphql
+│   ├── mutation
+│   │   └── project.ts
+│   └── query
+│       └── project.ts
+├── theme
+│   └── theme.jsx
+├── App.css
+├── App.test.tsx
+├── App.tsx
+├── index.css
+├── index.tsx
+├── react-app-env.d.ts
+├── reportWebVitals.ts
+├── settings.ts
+└── setupTests.ts
+````
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+_________________________________________
+#### Dossier components 🗂
 
-## Learn More
+Les composants vous permettent de découper l’interface utilisateur en éléments indépendants et réutilisables, vous permettant ainsi de considérer chaque élément de manière isolée. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+_________________________________________
+#### Dossier graphql 🗂
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Le dossier graphQl est structuré en 2 parties. 
+
+Le dossier query comporte la définition de toutes nos queries vers l'API pour récupérer les données (équivalent du GET en REST)
+
+Le dossier mutations comporte la définition de toutes nos mutations  vers l'API pour envoyer de la données (équivalent du POST, PUT, DELETE en REST)
+
+_________________________________________
+#### Dossier theme 🗂
+
+Ce dossier comporte le fichier de theming mis à disposition par MaterialUI. Il permet de définir des propriétés globales de style réutilisable par tout nos          composants.
+
+_________________________________________
+#### Fichiers 
+
+##### App.tsx 
+Le composant « App » du fichier « App. tsx » est notre composant root de base. Il permet d'importer les autres composants pour afficher le rendu.
+
+
+
+[Source Badge](https://github.com/alexandresanlim/Badges4-README.md-Profile)
