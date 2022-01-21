@@ -110,6 +110,6 @@ Si la requête est entrain de charger, alors on affichera un texte de chargement
 
 ### Ressources 
 
-- [Apollo Client](https://www.apollographql.com/docs/react/data/queries/)
+- [Apollo Client Queries](https://www.apollographql.com/docs/react/data/queries/)
 
 

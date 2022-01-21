@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useMutation } from '@apollo/client';
-
 import DELETE_PROJECT from '../../graphql/mutation/project';
 
 
