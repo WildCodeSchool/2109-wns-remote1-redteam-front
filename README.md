@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# Bienvenue sur l'application `2109-wns-remote1-redteam-front` 👋🏼
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## Available Scripts
+## Techno
 
-In the project directory, you can run:
+- Reactjs
+- TypeScript
+- GraphQl avec Apollo Client
+- MaterialUi (librairie de composant) + MaterialUi theming pour le style personnalisé
+- Eslint (config AirBNB)
+- React Router
+- Axios
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation du projet 👇🏼
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Cloner le projet 
 
-### `yarn test`
+>https://github.com/WildCodeSchool/2109-wns-remote1-redteam-front.git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installer les dépendances 
 
-### `yarn build`
+Toutes les dépendances du projet se trouve dans le fichier package.json 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Lancer la commande : 
+``` 
+npm install 
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Lancement du projet 👇🏼
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Démarrer
+```
+npm start 
+```
 
-### `yarn eject`
+Le projet est disponible sur le port 
+> http://localhost:3000
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Structure du projet 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Dossier SRC
+<img src="./src/docs/images/arbo.png" alt="tree ./src -C --dirsfirst -L 3 " width="200"/>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Dossier components
 
-## Learn More
+Les composants vous permettent de découper l’interface utilisateur en éléments indépendants et réutilisables, vous permettant ainsi de considérer chaque élément de manière isolée. 
+#### Dossier graphql
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Le dossier graphQl est structuré en 2 parties. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Le dossier query comporte la définition de toutes nos queries vers l'API pour récupérer les données (équivalent du GET en REST)
+
+Le dossier mutations comporte la définition de toutes nos mutations  vers l'API pour envoyer de la données (équivalent du POST, PUT, DELETE en REST)
+
+#### Dossier theme 
+
+Ce dossier comporte le fichier de theming mis à disposition par MaterialUI. Il permet de définir des propriétés globales de style réutilisable par tout nos composants.
+
+#### Fichiers 
+
+#### App.tsx 
+Le composant « App » du fichier « App. tsx » est notre composant root de base. Il permet d'importer les autres composants pour afficher le rendu.
+
