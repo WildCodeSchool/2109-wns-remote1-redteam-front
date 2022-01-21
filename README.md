@@ -50,23 +50,23 @@ Le projet est disponible sur le port
 
 &nbsp;&nbsp;#### Dossier components 🗂
 
-&nbsp;&nbsp;&nbsp;Les composants vous permettent de découper l’interface utilisateur en éléments indépendants et réutilisables, vous permettant ainsi de considérer chaque élément de manière isolée. 
+Les composants vous permettent de découper l’interface utilisateur en éléments indépendants et réutilisables, vous permettant ainsi de considérer chaque élément de manière isolée. 
 &nbsp;&nbsp;#### Dossier graphql 🗂
 
-&nbsp;&nbsp;&nbsp;Le dossier graphQl est structuré en 2 parties. 
+Le dossier graphQl est structuré en 2 parties. 
 
-&nbsp;&nbsp;&nbsp;Le dossier query comporte la définition de toutes nos queries vers l'API pour récupérer les données (équivalent du GET en REST)
+Le dossier query comporte la définition de toutes nos queries vers l'API pour récupérer les données (équivalent du GET en REST)
 
-&nbsp;&nbsp;&nbsp;Le dossier mutations comporte la définition de toutes nos mutations  vers l'API pour envoyer de la données (équivalent du POST, PUT, DELETE en REST)
+Le dossier mutations comporte la définition de toutes nos mutations  vers l'API pour envoyer de la données (équivalent du POST, PUT, DELETE en REST)
 
-&nbsp;#### Dossier theme 🗂
+&nbsp;&nbsp;#### Dossier theme 🗂
 
-&nbsp;&nbsp;&nbsp;Ce dossier comporte le fichier de theming mis à disposition par MaterialUI. Il permet de définir des propriétés globales de style réutilisable par &nbsp;&nbsp;&nbsp;tout nos          composants.
+Ce dossier comporte le fichier de theming mis à disposition par MaterialUI. Il permet de définir des propriétés globales de style réutilisable par tout nos          composants.
 
-&nbsp;#### Fichiers 
+&nbsp;&nbsp;#### Fichiers 
 
-&nbsp;&nbsp;#### App.tsx 
-&nbsp;&nbsp;&nbsp;Le composant « App » du fichier « App. tsx » est notre composant root de base. Il permet d'importer les autres composants pour afficher le rendu.
+&nbsp;&nbsp;&nbsp;##### App.tsx 
+Le composant « App » du fichier « App. tsx » est notre composant root de base. Il permet d'importer les autres composants pour afficher le rendu.
 
 
 
