@@ -46,7 +46,46 @@ _________________________________________
 ## Structure du projet 🤯
 
 ### Dossier SRC
-<img src="./src/docs/images/arbo.png" alt="tree ./src -C --dirsfirst -L 3 " width="200"/>
+
+
+````
+./src
+├── components
+│   ├── Admin
+│   │   └── Signup.tsx
+│   ├── Card
+│   │   └── BasicCard.tsx
+│   ├── Dashboard
+│   │   └── Dashboard.tsx
+│   ├── Navbar
+│   │   └── Navbar.tsx
+│   ├── Projects
+│   │   └── Projects.tsx
+│   ├── Tasks
+│   │   └── Tasks.tsx
+│   ├── Users
+│   │   └── Users.tsx
+│   ├── BtnComponent.tsx
+│   ├── IconText.tsx
+│   └── TextFields.tsx
+├── graphql
+│   ├── mutation
+│   │   └── project.ts
+│   └── query
+│       └── project.ts
+├── theme
+│   └── theme.jsx
+├── App.css
+├── App.test.tsx
+├── App.tsx
+├── index.css
+├── index.tsx
+├── react-app-env.d.ts
+├── reportWebVitals.ts
+├── settings.ts
+└── setupTests.ts
+````
+
 
 _________________________________________
 #### Dossier components 🗂
