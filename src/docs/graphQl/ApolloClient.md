@@ -61,7 +61,7 @@ _________________
 ```typescript
 return (
     <ApolloProvider client={client}>
-      <Component />
+      <App />
     </ApolloProvider>
   )
 ```
