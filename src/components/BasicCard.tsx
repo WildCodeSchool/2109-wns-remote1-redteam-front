@@ -6,8 +6,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { useMutation } from '@apollo/client';
-import {DELETE_PROJECT} from '../graphql/mutation/project';
+
 
 
 
@@ -19,13 +18,6 @@ interface IBasicCardProps {
 }
 
 function BasicCard({ id, name, description, btn }: IBasicCardProps): JSX.Element {
-  const [deleteProject] = useMutation(DELETE_PROJECT, {
-    onCompleted: () => console.log("yes"),
-});
-
-  function handleDeleteProject(idProject : string) {
-    deleteProject({variables : {deleteProjectId: idProject}})
-  };
   
   return (
     <Card sx={{ minWidth: 275 }}>
@@ -38,9 +30,8 @@ function BasicCard({ id, name, description, btn }: IBasicCardProps): JSX.Element
           </Typography>
         </CardContent>
         <CardActions>
-          {btn && <Button onClick={() => handleDeleteProject(id)} size="small">Supprimer</Button>}
           <Button>
-            <Link to={`/project/${id}`}>Modifier</Link>
+            <Link to={`/project/${id}`}>SEE MORE</Link>
           </Button>
         </CardActions>
       </Card>

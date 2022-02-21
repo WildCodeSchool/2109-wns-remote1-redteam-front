@@ -15,7 +15,6 @@ function Projects(): JSX.Element {
   if(loading) return <p>Loading...</p>
   if(error) return <p>Error</p>
 
-
   return (
     <div>
       <div style={{display: "flex"}}>
