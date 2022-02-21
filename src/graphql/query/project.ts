@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-const GET_PROJECTS = gql`
+export const GET_PROJECTS = gql`
     query GetProjects {
         projects {
             _id
@@ -11,4 +11,15 @@ const GET_PROJECTS = gql`
     }
 `;
 
-export default GET_PROJECTS;
+export const GET_PROJECT = gql`
+    query GetOneProject($id: ID) {
+        project(_id: $id) {
+            name
+            description
+            status
+            start_date
+            end_date
+            advance_pourcentage
+        }
+    }
+`;
