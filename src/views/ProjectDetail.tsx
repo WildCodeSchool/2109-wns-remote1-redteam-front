@@ -1,15 +1,41 @@
-import React from 'react';
-import { useQuery } from '@apollo/client';
-import { useParams } from 'react-router-dom';
-import { GET_PROJECT } from '../graphql/query/project';
+import React, { useState } from 'react';
+import { Button } from '@mui/material';
+import { useMutation, useQuery } from '@apollo/client';
+import { useParams , useHistory} from 'react-router-dom';
+import SnackBar from '../components/SnackBar';
+import { GET_PROJECT, GET_PROJECTS } from '../graphql/query/project';
+import { DELETE_PROJECT } from '../graphql/mutation/project';
 import TextFields from '../components/TextFields';
 
 
+
+interface UrlParams {
+  id : string;
+}
+
 const ProjectDetail = () : JSX.Element => {
 
-  const id =  useParams();
-
+  const history = useHistory();
+  
+  const  { id } =  useParams<UrlParams>();
   const { loading, error, data } = useQuery(GET_PROJECT, {variables: id});
+  const [deleteProject] = useMutation(DELETE_PROJECT, {
+    onCompleted: () => {
+      history.goBack()
+      
+      
+    },
+      refetchQueries: [
+        { query: GET_PROJECTS }
+      ]
+});
+
+
+
+
+  function handleDeleteProject(idProject : string) {
+    deleteProject({variables : {deleteProjectId: idProject}})
+  };
 
   if(loading) return <p>Loading...</p>;
   if(error) return <p>Error</p>;
@@ -28,6 +54,8 @@ const ProjectDetail = () : JSX.Element => {
       <TextFields name="endProject" type="date"/>
       <p>Pourcentage: {data.project.advance_pourcentage}</p>
       <TextFields name="pourcentage" type="number" />
+      <Button onClick={() => handleDeleteProject(id)} size="small">Supprimer</Button>
+
     </div>
   )
 }
