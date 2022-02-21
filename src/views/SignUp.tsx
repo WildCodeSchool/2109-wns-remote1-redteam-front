@@ -1,8 +1,8 @@
 import React from 'react';
 // import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import TextFields from '../TextFields'
-import BtnComponent from '../BtnComponent'
+import TextFields from '../components/TextFields';
+import Button from '../components/Button'
 
 function Signup(): JSX.Element {
   return (
@@ -11,7 +11,7 @@ function Signup(): JSX.Element {
         <TextFields name="Email" type="text"/>
         <TextFields name="Password" type="password" />
         <TextFields name="Confirm Password" type="password"/>
-        <BtnComponent txt="Sign up" />
+        <Button txt="Sign up" />
       </Container>
   );
 }
