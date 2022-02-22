@@ -6,7 +6,7 @@ import SnackBar from '../components/SnackBar';
 import { GET_PROJECT, GET_PROJECTS } from '../graphql/query/project';
 import { DELETE_PROJECT } from '../graphql/mutation/project';
 import TextFields from '../components/TextFields';
-
+import useNotification from '../hooks/useNotification';
 
 
 interface UrlParams {
@@ -16,14 +16,17 @@ interface UrlParams {
 const ProjectDetail = () : JSX.Element => {
 
   const history = useHistory();
-  
+  const { setNotification } = useNotification();
   const  { id } =  useParams<UrlParams>();
   const { loading, error, data } = useQuery(GET_PROJECT, {variables: id});
   const [deleteProject] = useMutation(DELETE_PROJECT, {
     onCompleted: () => {
       history.goBack()
-      
-      
+      setNotification({
+        open: true,
+        message: 'Project deleted',
+        type: 'success'
+      });
     },
       refetchQueries: [
         { query: GET_PROJECTS }
