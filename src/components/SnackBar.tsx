@@ -1,21 +1,25 @@
 import React, {useState} from 'react';
 import { Alert, Snackbar as MuiSnackbar } from '@mui/material';
+import useNotification from '../hooks/useNotification'
 
-const Snackbar = ({open} : {open: boolean}) => {
-  const [, setOpenSnackbar] = useState(false);
-  
+const Snackbar = () => {
+  const { notification, setNotification } = useNotification();
 
   const handleClose = () => {
-    setOpenSnackbar(false)
+    setNotification({
+      open: false,
+      message: '',
+      type: ''
+    })
   }
-
+  
   return (
     <div>
-    <MuiSnackbar open={open} autoHideDuration={4000} onClose={handleClose}>
-    <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-      This is a success message!
-    </Alert>
-  </MuiSnackbar>
+    <MuiSnackbar open={notification.open} autoHideDuration={4000} onClose={handleClose}>
+      <Alert onClose={handleClose} severity={notification.type} sx={{ width: '100%' }}>
+       {notification.message}
+      </Alert>
+    </MuiSnackbar>
   </div>
   )
 }
