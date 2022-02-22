@@ -10,7 +10,7 @@ const TaskDetail = (): JSX.Element =>
         <TextFields name="Email" type="text"/>
         <TextFields name="Password" type="password" />
         <TextFields name="Confirm Password" type="password"/>
-        <Button txt="Sign up" />
+        <Button name="Sign up" action={() => {}}/>
       </Container>
   
 

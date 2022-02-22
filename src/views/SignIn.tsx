@@ -10,7 +10,7 @@ function Signin(): JSX.Element {
         <h3>Signup</h3>
         <TextFields name="Email" type="text"/>
         <TextFields name="Password" type="password" />
-        <Button txt="Log in" />
+        <Button name="Log in" action={()=>{}} />
       </Container>
   );
 }
