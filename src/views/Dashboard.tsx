@@ -3,7 +3,7 @@ import Projects from './Projects';
 
 
 const Dashboard = (): JSX.Element => {
-console.log("non");
+console.log("Dahsboard");
   return (
     <div>
       <h2>Dashboard</h2>

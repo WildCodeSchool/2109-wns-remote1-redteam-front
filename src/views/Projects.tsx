@@ -2,7 +2,7 @@ import React from 'react';
 import ProjectsList from '../components/ProjectsList'
 
 const ProjectsView = ():JSX.Element => {
-    console.log("toto")
+    console.log("ProjectsView");
     return (
       <ProjectsList />
           )
