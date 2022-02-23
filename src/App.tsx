@@ -13,6 +13,7 @@ import Signup from './views/SignUp';
 import ProjectDetail from './views/ProjectDetail';
 import SnackBar from './components/SnackBar'
 import './App.css';
+import CreateProject from './views/CreateProject';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
@@ -38,6 +39,9 @@ function App(): JSX.Element {
               </Route>
               <Route path="/project/:id">
                 <ProjectDetail />
+              </Route>
+              <Route path="/createProject">
+                <CreateProject />
               </Route>
               <Route path="/tasks">
                 <Tasks/>

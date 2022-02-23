@@ -22,6 +22,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     'no-underscore-dangle': ['error', { allow: ['_id'] }],
+    "jsx-a11y/label-has-associated-control": "off",
   },
   ignorePatterns: ['.eslintrc.js'],
 };

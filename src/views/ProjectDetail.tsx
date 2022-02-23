@@ -46,17 +46,11 @@ const ProjectDetail = () : JSX.Element => {
   return (
     <div>
       <h1>{data.project.name}</h1>
-      <TextFields name="Title" type="text"/>
       <small>description : {data.project.description}</small>
-      <TextFields name="description" type="text"/>
       <p>Satut: {data.project.status}</p>
-      <TextFields name="status" type="select"/>
       <p>startDate: {data.project.start_date}</p>
-      <TextFields name="startProject" type="date"/>
       <p>endDate: {data.project.end_date}</p>
-      <TextFields name="endProject" type="date"/>
       <p>Pourcentage: {data.project.advance_pourcentage}</p>
-      <TextFields name="pourcentage" type="number" />
       <Button onClick={() => handleDeleteProject(id)} size="small">Supprimer</Button>
 
     </div>

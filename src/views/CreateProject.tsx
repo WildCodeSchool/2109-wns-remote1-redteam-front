@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Upload from '../components/Upload';
+
 
 const CreateProject = (): JSX.Element => {
-    console.log('Tasks');
+    const [project, setProject] = useState({
+        image: "https://www.ecolomag.fr/wp-content/plugins/ultimate-member/assets/img/default_avatar.jpg",
+        name: "",
+        description: ""
+    });
+    // TODO = type event
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files && e.target.files[0] 
+        if(!file) return; 
+        const objectUrl = URL.createObjectURL(file);
+        setProject({ ...project, image: objectUrl});
+    }
+        
     return (
-        <div>
-            <h1>create project</h1>
-        </div>
+        <>
+            <Upload image={project.image} onChange={onChange} />
+        </>
     );
 }
 

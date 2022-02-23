@@ -3,13 +3,14 @@ import {Button as MuiButton} from '@mui/material';
 import Stack from '@mui/material/Stack';
 
 interface ButtonProps {
-  txt : string
+  name : string;
+  action: () => void;
 }
 
- function Button({txt} : ButtonProps): JSX.Element {
+ function Button({name, action} : ButtonProps): JSX.Element {
   return (
     <Stack direction="row" spacing={2}>
-      <MuiButton variant="contained">{txt}</MuiButton>
+      <MuiButton onClick={action} variant="contained">{name}</MuiButton>
     </Stack>
   );
 }

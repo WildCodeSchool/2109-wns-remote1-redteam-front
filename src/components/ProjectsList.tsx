@@ -1,7 +1,9 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import BasicCard from './BasicCard';
+import { Link } from 'react-router-dom';
 import { GET_PROJECTS } from '../graphql/query/project';
+import Button  from './Button';
+import BasicCard from './BasicCard';
 
 interface IProject {
   _id: string,
@@ -17,6 +19,7 @@ function Projects(): JSX.Element {
 
   return (
     <div>
+      <Link to="/createProject"><Button name="Add Project" action={()=>{}} /></Link>
       <div style={{display: "flex"}}>
         { data && data.projects.map((project : IProject) => <BasicCard btn id={project._id} name={project.name} description={project.description} /> ) }
       </div>

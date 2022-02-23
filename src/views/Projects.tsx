@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ProjectsList from '../components/ProjectsList'
 
 const ProjectsView = ():JSX.Element => {
