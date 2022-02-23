@@ -20,9 +20,9 @@ export const NotificationContext = createContext({
 });
 
 export const NotificationProvider = ({children} : any) => {
-    const [notification, setNotification] = useState(defaultNotification);
+    const [contextNotification, setContextNotification] = useState(defaultNotification);
 
-    const contextValue = { notification, setNotification: (value: any) => setNotification(value)};
+    const contextValue = { notification: contextNotification, setNotification: (value: any) => setContextNotification(value)};
   return (
     <NotificationContext.Provider value={contextValue}>
       {children}

@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     'no-underscore-dangle': ['error', { allow: ['_id'] }],
     "jsx-a11y/label-has-associated-control": "off",
+    "react/jsx-props-no-spreading": "off",
   },
   ignorePatterns: ['.eslintrc.js'],
 };
