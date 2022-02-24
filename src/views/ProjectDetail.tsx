@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material";
 import { useMutation, useQuery } from "@apollo/client";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import { GET_PROJECT, GET_PROJECTS } from "../graphql/query/project";
 import { DELETE_PROJECT } from "../graphql/mutation/project";
 import useNotification from "../hooks/useNotification";
@@ -44,6 +44,9 @@ const ProjectDetail = (): JSX.Element => {
       <p>Pourcentage: {data.project.advance_pourcentage}</p>
       <Button onClick={() => handleDeleteProject(id)} size="small">
         Supprimer
+      </Button>
+      <Button>
+        <Link to={`/project/update/${id}`}>Modifier</Link>
       </Button>
     </div>
   );

@@ -14,6 +14,7 @@ export const GET_PROJECTS = gql`
 export const GET_PROJECT = gql`
     query GetOneProject($id: ID) {
         project(_id: $id) {
+            _id
             name
             description
             status
