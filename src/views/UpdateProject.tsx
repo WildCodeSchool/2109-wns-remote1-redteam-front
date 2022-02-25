@@ -84,7 +84,10 @@ const UpdateProject = () => {
 
   const handleSubmit = () => {
     console.log("SUBMIT: ", project);
-    updateProject({ variables: { ...project } });
+    if (!project) {
+      return;
+    }
+    updateProject({ variables: project });
   };
 
   if (error) return <p>Error</p>;
