@@ -64,97 +64,71 @@ export const NotificationProvider = ({children} : any) => {
 };
 ```
 >Nous créons ici un `Provider`. Son but est de transmettre les données et la fonction permettant de mettre à jour les données à tous ses enfants. Ce `Provider` prend en paramètre une props `children` dans laquelle seront contenus tous les enfants de notre balise `<NotificationProvider>`.
->Ici, pour que la valeur de notre `context` soit disponible depuis les enfants, nous créons un `state` que nous passerons en paramètre de notre `NotificationContextProvider`
+>Ici, pour que la valeur de notre `context` soit disponible depuis les enfants, nous créons un `state` que nous passerons en paramètre de notre `NotificationContextProvider`.
+
 _________________
 
-```typescript
-const DELETE_PROJECT = gql`
-mutation DeleteProject($deleteProjectId: String) {
-    deleteProject(_id: $deleteProjectId) {
-      name
-      description
-    }
-  }
-`;
+## Utilisation du contexte
 
-export default DELETE_PROJECT;
+
+```typescript
+./src > App.tsx
+-------------------------------------
+
+function App(): JSX.Element {
+  return (
+    <ApolloProvider client={client}>
+      <NotificationProvider>
+        <Nos composants>
+      </NotificationProvider>
+    </ApolloProvider>
+  )};
 ```
 
->On créer une variable DELETE_PROJECT qui contient la mutation pour supprimer un projet dans notre API. Ensuite, on exporte cette variable pour pouvoir executer la mutation depuis nos composants.
+>Ici, on englobe tout le contenu de notre application avec `<NotificationProvider>` pour que tous les composants bénéficient des données de notre contexte.
 
-_________________
 
-## Utilisation
-
-### Ici le but est de pouvoir supprimer un `project` depuis notre application via un bouton
+## Explication du hook useNotification
 
 
 ```typescript
-./src > components > Dashboard > Dashboard.tsx |
------------------------------------------------
-import { useMutation } from '@apollo/client';
-import DELETE_PROJECT from '../../graphql/mutation/project';
+./src > hooks > useNotification.ts
+-------------------------------------
+import { useContext } from 'react';
+import { NotificationContext } from '../NotificationContext';
 
-function BasicCard({ id, name, description, btn }) {
-  const [deleteProject] = useMutation(DELETE_PROJECT, {
-    onCompleted: () => console.log("yes"),
-});
+const useNotification = () => {
+  const { notification, setNotification } = useContext(NotificationContext);
 
-  function handleDeleteProject(idProject) {
-    deleteProject({variables : {deleteProjectId: idProject}})
+  return {
+    notification,
+    setNotification,
   };
-  
-  return (
-    <Card>
-        <CardContent>
-          <Content />
-        <CardActions>
-          {btn && 
-          <Button onClick={() => handleDeleteProject(id)} >
-            Supprimer
-          </Button>}
-        </CardActions>
-      </Card>
-  );
 }
 
-export default BasicCard;
+export default useNotification;
 ```
 
-_________________
+>Ici, on importe le hook `useContext` depuis react et le `Context` qu'on a préalablement créé. Ensuite, on écrit une fonction nommée `useNotification` qui récupère depuis notre contexte `NotificationContext` 2 variables que l'on exporte. 
+>`notification` nous donne accès aux données et `setNotification` nous permet de modifier les données.
+
+
+## Utilisation du hook useNotification
+
 ```typescript
-./src > components > Card > BasicCard.tsx |
--------------------------------------------
-import { useMutation } from '@apollo/client';
-import DELETE_PROJECT from '../../graphql/mutation/project';
+import useNotification from "../hooks/useNotification"
 
+const { notification, setNotification } = useNotification();
+
+setNotification({
+        message: "Projet mis à jour",
+        type: "success",
+        open: true,
+      });
 ```
->On commence par importer le hook `useMutation` depuis apolloClient. Celui-ci nous permettra d'excuter les mutations définies plus tôt, importées depuis le dossier des mutations. Le hook nous permet d'executer la mutation.
-_________________
-```typescript
-./src > components > Card > BasicCard.tsx |
--------------------------------------------
 
-const [deleteProject] = useMutation(DELETE_PROJECT, {
-    onCompleted: () => console.log("completed"),
-    onError : () => console.log("error")
-});
-```
->Ici nous définissons le nom de la fonction qui sera utiliser pour executer la mutation. Le hook `useMutation` prend en parametre deux arguments. Le premier est la mutation à executer. Le second est un object auquel nous pourront attribuer des fonction selon l'état de la mutation.
+>Pour utiliser ce hook `useNotification`, nous devons tout d'abord l'importer. Nous pouvons ensuite récupérer nos données et la fonction permettant de mettre à jour nos données.
+>Pour mettre à jour nos données `notification`, nous utilisons la fonction `setNotification` qui prend en paramètre un objet qui décrit une notification.
 
 
-_________________
-```typescript
-./src > components > Card > BasicCard.tsx |
--------------------------------------------
-
-function handleDeleteProject(idProject) {
-    deleteProject({variables : {deleteProjectId: idProject}})
-  };
-```
->Ensuite, nous pouvons utiliser la fonction `deleteProject` dans une fonction `handleDeleteProject` qui prend en paramètre l'ID du project (argument passer en props depuis le composant parent) qui sera appeler via un évenement sur un bouton. `deleteProject` prend en parametre un object qui a pour clé `variables` et pour valeur un object. Cet object à pour clé le nom de la variable défini dans la définition de mutation (`.src/graphQl/mutations/project.ts`), et pour valeur l'id du projet à supprimer.
-
-### Ressources 
-
-- [Apollo Client Mutations](https://www.apollographql.com/docs/react/data/mutations/)
 
