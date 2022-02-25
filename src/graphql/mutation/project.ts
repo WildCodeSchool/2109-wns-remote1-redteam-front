@@ -23,8 +23,8 @@ mutation DeleteProject($deleteProjectId: String) {
 `;
 
 export const UPDATE_PROJECT = gql`
-mutation Mutation($name: String, $id: String, $description: String, $status: String, $startDate: String, $endDate: String, $advancePourcentage: Int) {
-  updateProject(_id: $id, name: $name, description: $description, status: $status, start_date: $startDate, end_date: $endDate, advance_pourcentage: $advancePourcentage) {
+mutation Mutation($name: String, $_id: String, $description: String, $status: String, $startDate: String, $endDate: String, $advancePourcentage: Int) {
+  updateProject(_id: $_id, name: $name, description: $description, status: $status, start_date: $startDate, end_date: $endDate, advance_pourcentage: $advancePourcentage) {
     name
     description
   }
