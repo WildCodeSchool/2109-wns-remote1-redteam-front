@@ -87,6 +87,16 @@ export default function Navbar(): JSX.Element {
               </Link>
             </ListItemButton>
           </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <Link to="/login" style={{display : "flex",width:'100%' }}>
+                <ListItemIcon>
+                  <GroupIcon />
+                </ListItemIcon>
+                <ListItemText primary="Login" />
+              </Link>
+            </ListItemButton>
+          </ListItem>
         </List>
         <Divider />
       </Drawer>
