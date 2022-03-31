@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
 import { ThemeProvider } from "@mui/material/styles";
 import { NotificationProvider } from "./NotificationContext";
 import theme from "./theme/theme";
@@ -15,10 +15,21 @@ import SnackBar from "./components/SnackBar";
 import "./App.css";
 import CreateProject from "./views/CreateProject";
 import UpdateProject from "./views/UpdateProject";
+import Signin from "./views/SignIn";
+
+// const client = new ApolloClient({
+//   uri: "http://localhost:4000/graphql",
+//   cache: new InMemoryCache(),
+// });
+
+const link = createHttpLink({
+  uri: 'http://localhost:4000/graphql',
+  credentials: 'include'
+});
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
   cache: new InMemoryCache(),
+  link,
 });
 
 function App(): JSX.Element {
@@ -54,6 +65,9 @@ function App(): JSX.Element {
                 </Route>
                 <Route path="/signup">
                   <Signup />
+                </Route>
+                <Route path="/login">
+                  <Signin />
                 </Route>
               </Switch>
             </div>
